@@ -28,9 +28,17 @@ interface ClientInterface
     public function getAccessToken(AccessTokenRequest $request): AccessTokenResponse;
 
     /**
+     * Get share token
+     *
+     * @see https://developers.sumsub.com/api-reference/#access-tokens-for-sdks
+     * @throws Exception
+     */
+    public function getShareToken( ShareTokenRequest $request ): ShareTokenResponse;
+
+    /**
      * Get applicant data
      *
-     * @see https://developers.sumsub.com/api-reference/#getting-applicant-data
+     * @see https://docs.sumsub.com/reference/generate-share-token
      * @throws Exception
      */
     public function getApplicantData(ApplicantDataRequest $request): ApplicantDataResponse;
