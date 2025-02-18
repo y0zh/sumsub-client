@@ -13,7 +13,7 @@ API client for sumsub.com
 ## Installation
 
 ```shell script
-composer require alexeevdv/sumsub-client
+composer require y0zh/sumsub-client
 ```
 
 ## Client configuration
