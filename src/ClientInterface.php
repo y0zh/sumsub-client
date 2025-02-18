@@ -22,7 +22,7 @@ interface ClientInterface
     /**
      * Get access token for SDKs
      *
-     * @see https://developers.sumsub.com/api-reference/#access-tokens-for-sdks
+     * @see https://docs.sumsub.com/reference/generate-access-token
      * @throws Exception
      */
     public function getAccessToken(AccessTokenRequest $request): AccessTokenResponse;
@@ -30,7 +30,7 @@ interface ClientInterface
     /**
      * Get share token
      *
-     * @see https://developers.sumsub.com/api-reference/#access-tokens-for-sdks
+     * @see https://docs.sumsub.com/reference/generate-share-token
      * @throws Exception
      */
     public function getShareToken( ShareTokenRequest $request ): ShareTokenResponse;
@@ -38,7 +38,7 @@ interface ClientInterface
     /**
      * Get applicant data
      *
-     * @see https://docs.sumsub.com/reference/generate-share-token
+     * @see https://docs.sumsub.com/reference/get-applicant-data
      * @throws Exception
      */
     public function getApplicantData(ApplicantDataRequest $request): ApplicantDataResponse;
@@ -46,7 +46,7 @@ interface ClientInterface
     /**
      * Resetting an applicant
      *
-     * @see https://developers.sumsub.com/api-reference/#resetting-an-applicant
+     * @see https://docs.sumsub.com/reference/reset-applicant
      * @throws Exception
      */
     public function resetApplicant(ResetApplicantRequest $request): void;
@@ -54,7 +54,7 @@ interface ClientInterface
     /**
      * Get applicant status
      *
-     * @see https://developers.sumsub.com/api-reference/#getting-applicant-status-api
+     * @see https://docs.sumsub.com/reference/get-status-of-verification-steps
      * @throws Exception
      */
     public function getApplicantStatus(ApplicantStatusRequest $request): ApplicantStatusResponse;
@@ -62,7 +62,7 @@ interface ClientInterface
     /**
      * Get document images
      *
-     * @see https://developers.sumsub.com/api-reference/#getting-document-images
+     * @see https://docs.sumsub.com/reference/get-document-images
      * @throws Exception
      */
     public function getDocumentImage(DocumentImageRequest $request): DocumentImageResponse;
