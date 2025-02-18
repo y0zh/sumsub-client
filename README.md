@@ -45,6 +45,18 @@ $response = $client->getAccessToken(new AccessTokenRequest($externalUserId, $lev
 $accessToken = $response->getToken();
 ```
 
+## Getting share token
+
+```php
+use alexeevdv\SumSub\Request\ShareTokenRequest;
+
+$applicantId = 'some-id';
+$clientId = 'some-id';
+$ttlInSeconds = 3600;
+$response = $client->getShareToken( new ShareTokenRequest( $applicantId, $clientId, $ttlInSeconds ) );
+$shareToken = $response->getToken();
+```
+
 ## Getting applicant data by applicant id
 
 ```php
