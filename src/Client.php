@@ -91,6 +91,37 @@ final class Client implements ClientInterface
         return new AccessTokenResponse($decodedResponse['token'], $decodedResponse['userId']);
     }
 
+
+    /**
+     * @throws BadResponseException
+     * @throws TransportException
+     */
+    public function getShareToken( ShareTokenRequest $request ): ShareTokenResponse
+    {
+        $queryParams = [
+            'applicantId' => $request->getApplicantId(),
+            'forClientId' => $request->getClientId(),
+        ];
+
+        if ( $request->getTtlInSecs() !== null ) {
+            $queryParams['ttlInSecs'] = $request->getTtlInSecs();
+        }
+
+        $url = sprintf( '%s/resources/accessTokens/shareToken?%s', $this->baseUrl, http_build_query( $queryParams ) );
+
+        $httpRequest = $this->createApiRequest( 'POST', $url );
+        $httpResponse = $this->sendApiRequest( $httpRequest );
+
+        if ( $httpResponse->getStatusCode() !== 200 ) {
+            throw new BadResponseException($httpResponse);
+        }
+
+        $decodedResponse = $this->decodeResponse( $httpResponse );
+
+        return new AccessTokenResponse( $decodedResponse['token'], $decodedResponse['forClientId'] );
+    }
+    
+
     /**
      * @throws BadResponseException
      * @throws TransportException
