@@ -5,17 +5,19 @@ declare(strict_types=1);
 namespace alexeevdv\SumSub;
 
 use alexeevdv\SumSub\Exception\Exception;
-use alexeevdv\SumSub\Request\AccessTokenRequest;
-use alexeevdv\SumSub\Request\ApplicantDataRequest;
-use alexeevdv\SumSub\Request\ApplicantStatusRequest;
-use alexeevdv\SumSub\Request\DocumentImageRequest;
-use alexeevdv\SumSub\Request\InspectionChecksRequest;
-use alexeevdv\SumSub\Request\ResetApplicantRequest;
-use alexeevdv\SumSub\Response\AccessTokenResponse;
-use alexeevdv\SumSub\Response\ApplicantDataResponse;
-use alexeevdv\SumSub\Response\ApplicantStatusResponse;
-use alexeevdv\SumSub\Response\DocumentImageResponse;
-use alexeevdv\SumSub\Response\InspectionChecksResponse;
+use alexeevdv\SumSub\Request\AccessTokenRequest,
+    alexeevdv\SumSub\Request\ShareTokenRequest,
+    alexeevdv\SumSub\Request\ApplicantDataRequest,
+    alexeevdv\SumSub\Request\ApplicantStatusRequest,
+    alexeevdv\SumSub\Request\DocumentImageRequest,
+    alexeevdv\SumSub\Request\InspectionChecksRequest,
+    alexeevdv\SumSub\Request\ResetApplicantRequest;
+use alexeevdv\SumSub\Response\AccessTokenResponse,
+    alexeevdv\SumSub\Response\ShareTokenResponse,
+    alexeevdv\SumSub\Response\ApplicantDataResponse,
+    alexeevdv\SumSub\Response\ApplicantStatusResponse,
+    alexeevdv\SumSub\Response\DocumentImageResponse,
+    alexeevdv\SumSub\Response\InspectionChecksResponse;
 
 interface ClientInterface
 {
