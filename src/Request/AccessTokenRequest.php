@@ -21,17 +21,36 @@ final class AccessTokenRequest
     private $levelName;
 
     /**
+     * @var string
+     */
+    private $email;
+
+    /**
+     * @var string
+     */
+    private $phone;
+
+    /**
      * Lifespan of a token in seconds. Default value is equal to 10 mins.
      *
      * @var int|null
      */
     private $ttlInSecs;
 
-    public function __construct(string $userId, string $levelName, ?int $ttlInSecs = null)
+    /**
+     * @param string $userId
+     * @param string $levelName
+     * @param string|null $email
+     * @param string|null $phone
+     * @param int|null $ttlInSecs
+     */
+    public function __construct( string $userId, string $levelName, ?string $email = null, ?string $phone = null, ?int $ttlInSecs = null )
     {
-        $this->userId = $userId;
-        $this->levelName = $levelName;
-        $this->ttlInSecs = $ttlInSecs;
+        $this->userId       = $userId;
+        $this->levelName    = $levelName;
+        $this->ttlInSecs    = $ttlInSecs;
+        $this->email        = $email;
+        $this->phone        = $phone;
     }
 
     public function getUserId(): string
@@ -47,5 +66,15 @@ final class AccessTokenRequest
     public function getTtlInSecs(): ?int
     {
         return $this->ttlInSecs;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
     }
 }
